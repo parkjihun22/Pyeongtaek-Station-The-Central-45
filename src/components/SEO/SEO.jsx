@@ -71,7 +71,7 @@ const buildWebsiteSchema = () => ({
       logo: getAbsoluteUrl("/logo512.ico"),
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: `+82-${siteSeo.phone.replace(/^0/, "")}`,
+        telephone: siteSeo.phone || "1533-8848",
         contactType: "customer service",
         areaServed: "KR",
         availableLanguage: "Korean",
@@ -111,7 +111,7 @@ const buildProjectSchema = () => ({
   url: siteSeo.siteUrl,
   description: siteSeo.defaultDescription,
   image: getAbsoluteUrl(siteSeo.ogImage),
-  telephone: siteSeo.phone,
+  telephone: siteSeo.phone || "1533-8848",
   address: {
     "@type": "PostalAddress",
     addressCountry: siteSeo.project.addressCountry,
